@@ -1,0 +1,14 @@
+{
+    "name": "Vik Booking",
+    "display": "standalone",
+    "short_name": "tanjore.hyderspark.com",
+    "description": "Vik Booking - tanjore.hyderspark.com",
+    "start_url": "https:\/\/tanjore.hyderspark.com\/wp-admin\/admin.php?page=vikbooking&webapp=1",
+    "icons": [
+        {
+            "src": "https:\/\/tanjore.hyderspark.com\/wp-content\/plugins\/vikbooking\/admin\/resources\/channels\/touch-icon-192.png",
+            "sizes": "192x192",
+            "type": "image\/png"
+        }
+    ]
+}
