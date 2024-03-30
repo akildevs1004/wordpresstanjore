@@ -97,8 +97,11 @@ if (isset($_SESSION["api_search_results"])) {
 
             $decodedData['api_json_reference_number'] = $api_json_reference_number;
 
+            if (isset($_SESSION['payment_reference_id']))
+                $decodedData['payment_reference_id'] =  $_SESSION['payment_reference_id'];
+            else
+                $decodedData['payment_reference_id'] =  "Not Availalbe";
 
-            $decodedData['payment_reference_id'] =  $_SESSION['payment_reference_id'];
             if (isset($_SESSION['payment_response']))
                 $decodedData['payment_response'] =  json_decode($_SESSION['payment_response'], true);
             else
