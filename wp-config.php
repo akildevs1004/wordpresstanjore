@@ -109,7 +109,15 @@ $table_prefix = 'wpd3_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', true);
+
+
+
+define('HMS_API_SERVER', "https://backend.ezhms.com/api");
+define('HMS_API_COMPANY_ID', "1"); //  tanjore 1, Demo 3,kodai 2
+define('HMS_API_COMPANY_REF_NAME', "tanjore.hyderspark.com");
+define('HMS_API_PG_CALL_BACK_URL', "https://tanjore.hyderspark.com/api_payment_success.php");
+define('HMS_API_PG_MESSAGE', "Tanjore Hyderspark");
 
 /* Add any custom values between this line and the "stop editing" line. */
 
