@@ -32,7 +32,7 @@
 // /** Database hostname */
 // define('DB_HOST', 'localhost');
 
-define('DB_NAME', 'kodai');
+define('DB_NAME', 'tanjore');
 
 /** Database username */
 define('DB_USER', 'kodai');
