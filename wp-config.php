@@ -116,8 +116,13 @@ define('WP_DEBUG', true);
 define('HMS_API_SERVER', "https://backend.ezhms.com/api");
 define('HMS_API_COMPANY_ID', "1"); //  tanjore 1, Demo 3,kodai 2
 define('HMS_API_COMPANY_REF_NAME', "tanjore.hyderspark.com");
-define('HMS_API_PG_CALL_BACK_URL', "https://tanjore.hyderspark.com/api_payment_success.php");
+define('HMS_API_PG_CALL_BACK_URL', "https://tanjore.hyderspark.com/hms_api/api_payment_success.php");
 define('HMS_API_PG_MESSAGE', "Tanjore Hyderspark");
+
+define('HMS_API_PG_REFERENCE_CODE', "TJ");
+define('HMS_API_PG_KEY', "rzp_live_8g6bjwIrihwn3T");
+define('HMS_API_PG_TOKEN', "JNs1nXW6PmUnNkHIdPfQ63n4");
+
 
 /* Add any custom values between this line and the "stop editing" line. */
 

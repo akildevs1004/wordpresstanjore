@@ -71,7 +71,7 @@ if (isset($_SESSION["api_search_results"])) {
             $decodedData['check_out'] = date('Y-m-d', $ord['checkout']);
             $decodedData['payment_mode_id'] =  3; //3 online
 
-
+            //$decodedData['advance_price'] = $ord['total'];
 
             $decodedData['total_days'] = $room_stay_nights;
             $decodedData['sub_total'] = $ord['total'];
@@ -114,8 +114,6 @@ if (isset($_SESSION["api_search_results"])) {
                 $decodedData['advance_price'] = 0;
                 $decodedData['payment_response'] = "Falied payment";
             }
-
-
 
 
             $booked_rooms = [];

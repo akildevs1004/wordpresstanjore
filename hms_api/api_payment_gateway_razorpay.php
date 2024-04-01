@@ -1,26 +1,28 @@
 <?php
 
 //echo $_SERVER['HTTP_REFERER'];
-include('../wp-content/razorpay-php-master-updated/Razorpay.php');
+include('razorpay-paymentgateway/Razorpay.php');
 
 //echo "<pre>";
 
 use Razorpay\Api\Api;
 
 $short_url = '';
-$reference_id = 'TJ' . date('dmYHis');
+$reference_id = HMS_API_PG_REFERENCE_CODE . date('dmYHis');
 $_SESSION['payment_reference_id'] = $reference_id;
-$api = new Api('rzp_live_8g6bjwIrihwn3T', 'JNs1nXW6PmUnNkHIdPfQ63n4');
 
-//$origtotdue = 10;
+
+$api = new Api(HMS_API_PG_KEY, HMS_API_PG_TOKEN);
+
+$origtotdue = 10;
 try {
     $results =  $api->paymentLink->create(array(
         'amount' => $origtotdue * 100, 'currency' => 'INR', 'accept_partial' => false,
-        'expire_by' => strtotime(date('Y-m-d H:i:s')) + 10000, 'reference_id' => $reference_id, 'description' => 'Room Reservation', 'customer' => array(
+        'expire_by' => strtotime(date('Y-m-d H:i:s')) + 10000, 'reference_id' => $reference_id, 'description' => HMS_API_PG_MESSAGE . '- Room Reservation', 'customer' => array(
             'name' => 'Online',
             'email' => 'customer@gmail.com', 'contact' => '+911122334455'
         ),  'notify' => array('sms' => false, 'email' => false),
-        'reminder_enable' => false, 'notes' => array('website' => "Kodai Hyderspark", 'ref_id' => $reference_id), 'callback_url' => 'https://tanjore.hyderspark.com/api_payment_success.php',
+        'reminder_enable' => false, 'notes' => array('website' => HMS_API_PG_MESSAGE, 'ref_id' => $reference_id), 'callback_url' => HMS_API_PG_CALL_BACK_URL,
         'callback_method' => 'get'
     ));
 
@@ -40,7 +42,7 @@ try {
 if ($short_url != '') {
 ?>
 
-    <button type="button" class="btn booknow vbo-pref-color-btn paybutton" value="PayButton"><img src="../razor_pay_button.png" /></button>
+    <button type="button" class="btn booknow vbo-pref-color-btn paybutton" value="PayButton"><img src="../hms_api/razor_pay_button.png" /></button>
     <script>
         jQuery(document).ready(function() {
             jQuery(".paybutton").click(function() {
