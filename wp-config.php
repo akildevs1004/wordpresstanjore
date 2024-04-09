@@ -109,7 +109,7 @@ $table_prefix = 'wpd3_';
  *
  * @link https://wordpress.org/documentation/article/debugging-in-wordpress/
  */
-define('WP_DEBUG', true);
+define('WP_DEBUG', false);
 
 
 
